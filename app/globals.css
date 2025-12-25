@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
+/* 
+   BASE THEME (LIGHT MODE DEFAULT)
+ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --border: #e5e7eb;
+
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --accent: #22d3ee;
+
+  --success: #10b981;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* 
+   DARK MODE (SYSTEM PREFERENCE)
+ */
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg: #0b0f19;
+    --surface: #111827;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --border: #1f2933;
+
+    --primary: #6366f1;
+    --primary-hover: #818cf8;
+    --accent: #22d3ee;
+
+    --success: #34d399;
   }
 }
 
+/* 
+   GLOBAL STYLES
+ */
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 
+   UTILITIES
+ */
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.border-default {
+  border-color: var(--border);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+/* 
+   GRADIENTS
+ */
+
+.gradient-main {
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+}
+
+@media (prefers-color-scheme: dark) {
+  .gradient-main {
+    background: linear-gradient(135deg, #1e1b4b, #0f172a);
+  }
 }
