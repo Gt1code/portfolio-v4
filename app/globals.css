@@ -107,7 +107,9 @@ body {
   background-color: var(--bg);
   color: var(--text-primary);
   font-family: system-ui, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* 
@@ -135,7 +137,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  opacity: 0.8;
 }
 
 /* 

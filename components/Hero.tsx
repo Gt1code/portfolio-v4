@@ -1,11 +1,11 @@
 export default function Hero() {
   return (
-    <section className="min-h-[calc(100vh-61px)] text-xl flex flex-col justify-center items-center text-center px-4 bg-[url('/bg-header-mobile.png')] bg-no-repeat bg-cover">
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-(--text-primary)">
-        Hi, I’m Godstime Sunday 👋
+    <section className="flex min-h-[calc(100vh-61px)] flex-col items-center justify-center bg-[url('/bg-header-mobile.png')] bg-cover bg-no-repeat px-4 text-center text-xl">
+      <h1 className="mb-4 text-4xl font-bold text-(--text-primary) md:text-5xl">
+        Hi, I&apos;m Godstime Sunday 👋
       </h1>
 
-      <p className="max-w-xl text-(--text-secondary) mb-6">
+      <p className="mb-6 max-w-xl text-(--text-secondary)">
         Frontend Developer building clean, modern, and scalable web
         applications.
       </p>
@@ -17,7 +17,7 @@ export default function Hero() {
 
         <a
           href="#contact"
-          className="border border-white/40 px-6 py-3 rounded hover:bg-white/10 transition text-(--text-primary)"
+          className="hover:bg-border rounded border border-black px-6 py-3 text-(--text-primary) transition"
         >
           Contact Me
         </a>

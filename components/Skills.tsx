@@ -2,9 +2,9 @@ const skills = ["React", "Next.js", "Typescript", "Tailwind CSS", "Git"];
 
 export default function Skills() {
   return (
-    <section className="bg-[url('/bg-header-desktop.png')] bg-no-repeat bg-cover py-20">
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6 text-(--text-primary)">
+    <section className="bg-[url('/bg-header-desktop.png')] bg-cover bg-no-repeat py-20">
+      <div className="mx-auto max-w-4xl px-4">
+        <h2 className="mb-6 text-3xl font-bold text-(--text-primary)">
           Skills
         </h2>
 
@@ -12,7 +12,7 @@ export default function Skills() {
           {skills.map((skill) => (
             <span
               key={skill}
-              className="px-4 py-2 border border-default rounded-md text-sm text-(--text-primary) hover:bg-(--primary)] hover:text-white transition"
+              className="border-default hover:bg-(--primary)] rounded-md border px-4 py-2 text-sm text-(--text-primary)"
             >
               {skill}
             </span>

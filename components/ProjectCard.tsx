@@ -25,15 +25,16 @@ export default function ProjectCard({
   githubUrl,
 }: ProjectCardProps) {
   return (
+    // grid min-h-155 lg:min-h-120 grid-rows-[50%_50%]
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="group grid min-h-[80vh] grid-rows-[60%_40%] overflow-hidden rounded-2xl border border-border bg-background shadow-sm transition hover:shadow-md"
+      className="group border-border bg-surface flex min-h-120 flex-col justify-between rounded-2xl border shadow-sm transition hover:shadow-md"
     >
-      {/* Image Section (60%) */}
-      <div className="relative h-full w-full overflow-hidden">
+      {/* Image Section  */}
+      <div className="relative h-full w-full flex-[0.6] overflow-hidden rounded-t-2xl">
         <Image
           src={imageUrl}
           alt={alt}
@@ -44,12 +45,14 @@ export default function ProjectCard({
         />
       </div>
 
-      {/* Content Section (40%) */}
-      <div className="flex flex-col justify-between p-4">
+      {/* Content Section  */}
+      <div className="flex flex-[0.4] flex-col justify-between p-4">
         <div>
-          <h3 className="text-xl font-semibold text-foreground">{title}</h3>
+          <h3 className="text-xl font-semibold text-(--text-primary)">
+            {title}
+          </h3>
 
-          <p className="mt-2 text-sm text-muted-foreground line-clamp-3">
+          <p className="mt-2 line-clamp-3 text-sm text-(--text-secondary)">
             {description}
           </p>
 
@@ -57,7 +60,7 @@ export default function ProjectCard({
             {tech.map((item) => (
               <span
                 key={item}
-                className="rounded-md bg-muted px-2 py-1 text-xs text-muted-foreground"
+                className="rounded-md bg-(--text-secondary)/20 px-2 py-1 text-xs text-(--text-secondary)"
               >
                 {item}
               </span>
@@ -65,12 +68,12 @@ export default function ProjectCard({
           </div>
         </div>
 
-        <div className="mt-3 pb-8 flex gap-6">
+        <div className="mt-3 flex grow items-end gap-6">
           {liveUrl && (
             <Link
               href={liveUrl}
               target="_blank"
-              className="inline-flex items-center gap-1 text-xl font-medium text-primary hover:underline"
+              className="text-primary inline-flex items-center gap-1 text-xl font-medium hover:underline"
             >
               Live <ExternalLink size={16} />
             </Link>
@@ -80,7 +83,7 @@ export default function ProjectCard({
             <Link
               href={githubUrl}
               target="_blank"
-              className="inline-flex items-center gap-1 text-xl font-medium text-primary hover:underline"
+              className="text-primary inline-flex items-center gap-1 text-xl font-medium hover:underline"
             >
               Code <Github size={16} />
             </Link>
