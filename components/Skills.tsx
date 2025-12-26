@@ -2,7 +2,7 @@ const skills = ["React", "Next.js", "Typescript", "Tailwind CSS", "Git"];
 
 export default function Skills() {
   return (
-    <section className="bg-surface py-20">
+    <section className="bg-[url('/bg-header-desktop.png')] bg-no-repeat bg-cover py-20">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-6 text-(--text-primary)">
           Skills
