@@ -1,10 +1,13 @@
 import type { NextConfig } from "next";
-// import withFlowbiteReact from "flowbite-react/plugin/nextjs";
+import withBundleAnalyzer from "@next/bundle-analyzer";
+
+// Enable bundle analyzer only when environment variable is set
+const isAnalyzerEnabled = process.env.ANALYZE === "true";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* your existing config options */
 };
 
-export default nextConfig;
-
-// export default withFlowbiteReact(nextConfig);
+export default withBundleAnalyzer({
+  enabled: isAnalyzerEnabled,
+})(nextConfig);

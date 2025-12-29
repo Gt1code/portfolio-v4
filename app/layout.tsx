@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
+import "@/app/globals.css";
 import Footer from "@/components/Footer";
 
 const geistSans = Geist({
@@ -15,9 +14,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Godstime | Frontend Developer",
+  title: "Godstime Sunday | Frontend Developer",
   description:
-    "A portfolio website showcasing projects and skills of a frontend developer.",
+    "Frontend developer building modern, fast, and accessible web experiences with React, Next.js, and Tailwind CSS.",
+
+  openGraph: {
+    title: "Godstime Sunday | Frontend Developer",
+    description:
+      "Explore my portfolio showcasing modern frontend projects built with React, Next.js, and Tailwind CSS.",
+    url: "https://sgodstime.vercel.app/",
+    siteName: "Godstime Portfolio",
+    images: [
+      {
+        url: "/og-image.png", // must be inside /public
+        width: 1200,
+        height: 630,
+        alt: "Godstime Sunday Portfolio Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Godstime Sunday | Frontend Developer",
+    description:
+      "Frontend developer building modern web experiences using Next.js and Tailwind CSS.",
+    images: ["/og-image.png"],
+  },
+
+  metadataBase: new URL("https://your-domain.com"),
 };
 
 export default function RootLayout({
@@ -30,7 +57,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
         <Footer />
       </body>

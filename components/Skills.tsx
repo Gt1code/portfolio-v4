@@ -1,14 +1,21 @@
-const skills = ["React", "Next.js", "Typescript", "Tailwind CSS", "Git"];
+const skills = [
+  "React",
+  "Next.js",
+  "Typescript",
+  "Tailwind CSS",
+  "Motion",
+  "Git",
+];
 
 export default function Skills() {
   return (
-    <section className="bg-[url('/bg-header-desktop.png')] bg-cover bg-no-repeat py-20">
+    <section className="bg-[url('/bg-header-desktop.webp')] bg-cover bg-no-repeat px-4 py-20">
       <div className="mx-auto max-w-4xl px-4">
-        <h2 className="mb-6 text-3xl font-bold text-(--text-primary)">
+        <h2 className="mb-6 text-center text-3xl font-bold text-(--text-primary) md:text-left">
           Skills
         </h2>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap justify-center gap-3 md:justify-start">
           {skills.map((skill) => (
             <span
               key={skill}

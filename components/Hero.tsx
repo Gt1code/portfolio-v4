@@ -1,6 +1,10 @@
+import Navbar from "@/components/Navbar";
+
 export default function Hero() {
   return (
-    <section className="flex min-h-[calc(100vh-61px)] flex-col items-center justify-center bg-[url('/bg-header-mobile.png')] bg-cover bg-no-repeat px-4 text-center text-xl">
+    <section className="flex min-h-screen flex-col items-center justify-center bg-[url('/bg-header-mobile.webp')] bg-cover bg-no-repeat px-4 text-center text-xl">
+      <Navbar />
+
       <h1 className="mb-4 text-4xl font-bold text-(--text-primary) md:text-5xl">
         Hi, I&apos;m Godstime Sunday 👋
       </h1>
@@ -11,13 +15,13 @@ export default function Hero() {
       </p>
 
       <div className="flex gap-4">
-        <a href="#projects" className="btn-primary">
+        <a href="#projects" className="btn-primary px-4 py-2 sm:px-6 sm:py-3">
           View Projects
         </a>
 
         <a
           href="#contact"
-          className="hover:bg-border rounded border border-black px-6 py-3 text-(--text-primary) transition"
+          className="rounded border border-(--outline-border) px-4 py-2 text-(--text-primary) transition hover:bg-(--outline-bg) active:scale-95 sm:px-6 sm:py-3"
         >
           Contact Me
         </a>

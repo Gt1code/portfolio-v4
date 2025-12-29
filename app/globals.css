@@ -8,11 +8,14 @@
  */
 
 :root {
+  --menu-text: #000;
   --bg: #f9fafb;
   --surface: #ffffff;
   --text-primary: #111827;
   --text-secondary: #6b7280;
-  --border: oklch(0.922 0 0);
+  --border: #f9fafb;
+  --outline-border: #111827;
+  --outline-bg: #c8c8c8;
 
   --primary: oklch(0.205 0 0);
   --primary-hover: #4338ca;
@@ -85,11 +88,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --menu-text: #fff;
     --bg: #0b0f19;
     --surface: #111827;
     --text-primary: #f9fafb;
     --text-secondary: #9ca3af;
     --border: #1f2933;
+    --outline-border: oklch(70.9% 0.00008 271.152 / 0.921);
+    --outline-bg: rgb(44, 44, 67);
 
     --primary: #6366f1;
     --primary-hover: #818cf8;
@@ -131,13 +137,24 @@ body {
 .btn-primary {
   background-color: var(--primary);
   color: white;
-  padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   transition: background-color 0.2s ease;
 }
 
 .btn-primary:hover {
   opacity: 0.8;
+}
+
+/* Click / Active */
+.btn-primary:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 20%);
+}
+
+/* Keyboard accessibility */
+.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 50%, white);
 }
 
 /* 

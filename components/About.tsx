@@ -1,9 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
+
+const MotionDiv = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.div),
+  { ssr: false },
+);
 
 type IconListProps = {
   icons: React.ReactNode;
@@ -31,35 +37,35 @@ const IconList: IconListProps[] = [
 
 export default function About() {
   return (
-    <motion.section
+    <MotionDiv
       id="about"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="flex min-h-[calc(100vh-44px)] scroll-mt-12 items-center justify-center px-6 py-20"
+      className="flex min-h-[calc(100vh-44px)] scroll-mt-12 items-center justify-center overflow-hidden px-6 py-20"
     >
       <div className="flex w-full max-w-4xl flex-col items-center gap-8 md:flex-row md:gap-2">
         {/* Image */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="md:flex-1"
+          className="flex justify-center md:flex-1"
         >
           <Image
             loading="eager"
-            src="/profile-pic.png"
+            src="/profile-pic.webp"
             alt="profile picture"
             width={300}
             height={250}
             className="mx-auto w-[15em] rounded-3xl sm:w-[18em] md:mx-0"
           />
-        </motion.div>
+        </MotionDiv>
 
         {/* Text content */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -78,7 +84,7 @@ export default function About() {
           </p>
 
           {/* Social Icons */}
-          <motion.div
+          <MotionDiv
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -95,15 +101,19 @@ export default function About() {
                   hidden: { opacity: 0, y: 10 },
                   visible: { opacity: 1, y: 0 },
                 }}
-                whileHover={{ y: -4, scale: 1.05 }}
+                whileHover={{
+                  y: -4,
+                  scale: 1.05,
+                  transition: { duration: 0.1 },
+                }}
                 className="rounded-full bg-(--text-secondary)/20 p-2 transition"
               >
                 {icon.icons}
               </motion.a>
             ))}
-          </motion.div>
-        </motion.div>
+          </MotionDiv>
+        </MotionDiv>
       </div>
-    </motion.section>
+    </MotionDiv>
   );
 }

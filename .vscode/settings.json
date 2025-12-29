@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["Godstime", "oklch"],
+  "cSpell.words": ["Godstime", "oklab", "oklch"],
   "files.associations": {
     "*.css": "tailwindcss"
   },
