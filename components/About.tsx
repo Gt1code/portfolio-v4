@@ -5,6 +5,7 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import { FileTextIcon } from "lucide-react";
 
 const MotionDiv = dynamic(
   () => import("framer-motion").then((mod) => mod.motion.div),
@@ -52,7 +53,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex justify-center md:flex-1"
+          className="flex justify-center md:flex-3"
         >
           <Image
             loading="eager"
@@ -64,13 +65,43 @@ export default function About() {
           />
         </MotionDiv>
 
+        <section className="hidden md:flex md:flex-1 md:justify-center">
+          <MotionDiv
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.15, delayChildren: 0.2 }}
+            className="mt-6 hidden justify-center gap-8 md:flex md:flex-col md:justify-start"
+          >
+            {IconList.map((icon) => (
+              <motion.a
+                key={icon.href}
+                href={icon.href}
+                target="_blank"
+                aria-label={icon.ariaLabel}
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.01 },
+                }}
+                className="rounded-full bg-(--text-secondary)/20 p-2 transition"
+              >
+                {icon.icons}
+              </motion.a>
+            ))}
+          </MotionDiv>
+        </section>
+
         {/* Text content */}
         <MotionDiv
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center md:flex-1 md:text-left"
+          className="text-center md:flex-3 md:text-left"
         >
           <h2 className="mb-4 text-3xl font-bold text-(--text-primary)">
             About Me
@@ -89,7 +120,7 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ staggerChildren: 0.15, delayChildren: 0.2 }}
-            className="mt-6 flex justify-center gap-8 md:justify-start"
+            className="mt-6 flex justify-center gap-8 md:hidden md:justify-start"
           >
             {IconList.map((icon) => (
               <motion.a
@@ -104,7 +135,7 @@ export default function About() {
                 whileHover={{
                   y: -4,
                   scale: 1.05,
-                  transition: { duration: 0.1 },
+                  transition: { duration: 0.05 },
                 }}
                 className="rounded-full bg-(--text-secondary)/20 p-2 transition"
               >
@@ -112,6 +143,19 @@ export default function About() {
               </motion.a>
             ))}
           </MotionDiv>
+
+          <div className="flex w-full items-center justify-center md:justify-start">
+            <a
+              className="btn-primary clip-top-right mt-8 flex w-fit items-center justify-center gap-1 px-4 py-3"
+              role="button"
+              href="/Godstime_Sunday_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FileTextIcon className="" />
+              Resume
+            </a>
+          </div>
         </MotionDiv>
       </div>
     </MotionDiv>

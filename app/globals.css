@@ -126,6 +126,9 @@ body {
    UTILITIES
  */
 
+.clip-top-right {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 15px, 100% 100%, 0% 100%);
+}
 .bg-surface {
   background-color: var(--surface);
 }
@@ -225,7 +228,6 @@ body {
  */
 
 .dark {
-  --bg: url("/particle-bg.webp");
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
