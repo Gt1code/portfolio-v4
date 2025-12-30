@@ -1,3 +1,5 @@
+import EmailForm from "@/components/EmailForm";
+
 export default function Contact() {
   return (
     <section
@@ -5,6 +7,9 @@ export default function Contact() {
       className="mt-6 flex w-full flex-col items-center justify-center px-8 py-20 text-(--text-primary) md:min-h-screen dark:text-(--text-primary)"
     >
       <div className="w-full max-w-2xl">
+        <p className="mb-2 text-center text-(--text-secondary)">
+          Let&apos;s work together
+        </p>
         <h2 className="mb-4 text-center text-3xl font-bold text-(--text-primary)">
           Contact Me
         </h2>
@@ -29,6 +34,12 @@ export default function Contact() {
             <span className="text-[0.9rem]">Linkedin</span>
           </a>
         </div>
+
+        <h2 className="my-8 text-center text-xl font-semibold">
+          Send Me A Message
+        </h2>
+
+        <EmailForm />
       </div>
     </section>
   );

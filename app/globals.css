@@ -13,6 +13,8 @@
   --surface: #ffffff;
   --text-primary: #111827;
   --text-secondary: #6b7280;
+  --form-border: #000000;
+  --text-menu: #535862;
   --border: #f9fafb;
   --outline-border: #111827;
   --outline-bg: #c8c8c8;
@@ -93,6 +95,8 @@
     --surface: #111827;
     --text-primary: #f9fafb;
     --text-secondary: #9ca3af;
+    --form-border: #9ca3af;
+    --text-menu: #d4d8e0;
     --border: #1f2933;
     --outline-border: oklch(70.9% 0.00008 271.152 / 0.921);
     --outline-bg: rgb(44, 44, 67);
@@ -221,6 +225,7 @@ body {
  */
 
 .dark {
+  --bg: url("/particle-bg.webp");
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);

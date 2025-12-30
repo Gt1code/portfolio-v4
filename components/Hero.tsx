@@ -21,7 +21,7 @@ export default function Hero() {
 
         <a
           href="#contact"
-          className="rounded border border-(--outline-border) px-4 py-2 text-(--text-primary) transition hover:bg-(--outline-bg) active:scale-95 sm:px-6 sm:py-3"
+          className="rounded border border-(--outline-border) px-4 py-2 text-(--text-primary) transition hover:bg-(--outline-bg) active:scale-95 active:bg-(--text-secondary)/10 sm:px-6 sm:py-3"
         >
           Contact Me
         </a>

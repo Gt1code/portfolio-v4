@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Godstime Portfolio",
     images: [
       {
-        url: "/og-image.png", // must be inside /public
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Godstime Sunday Portfolio Preview",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
 
-  metadataBase: new URL("https://your-domain.com"),
+  metadataBase: new URL("https://sgodstime.vercel.app/"),
 };
 
 export default function RootLayout({
@@ -57,7 +57,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* <Navbar /> */}
         {children}
         <Footer />
       </body>

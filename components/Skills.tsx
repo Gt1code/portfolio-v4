@@ -3,7 +3,7 @@ const skills = [
   "Next.js",
   "Typescript",
   "Tailwind CSS",
-  "Motion",
+  "Framer Motion",
   "Git",
 ];
 
@@ -19,7 +19,7 @@ export default function Skills() {
           {skills.map((skill) => (
             <span
               key={skill}
-              className="border-default hover:bg-(--primary)] rounded-md border px-4 py-2 text-sm text-(--text-primary)"
+              className="hover:bg-(--primary)] rounded-md border border-(--outline-bg) px-4 py-2 text-sm text-(--text-primary)"
             >
               {skill}
             </span>

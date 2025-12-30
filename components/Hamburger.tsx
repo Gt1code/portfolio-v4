@@ -24,33 +24,53 @@ export default function Hamburger() {
         <DropdownMenuTrigger asChild>
           <button
             aria-label={isOpen ? "Close menu" : "Open menu"}
-            className="focus-visible:ring-primary cursor-pointer rounded-md p-2 transition focus-visible:ring-2 focus-visible:outline-none"
+            onClick={(e) => e.currentTarget.blur()}
+            className="cursor-pointer rounded-md p-2 ring-0 transition outline-none focus:ring-0 focus:outline-none focus-visible:ring-0"
           >
-            {isOpen ? <X /> : <MenuIcon />}
+            {isOpen ? (
+              <X className="pointer-events-none" />
+            ) : (
+              <MenuIcon className="pointer-events-none" />
+            )}
           </button>
         </DropdownMenuTrigger>
 
         <DropdownMenuContent
           align="start"
-          className="bg-surface z-50 mr-2 min-w-40 py-2 text-(--text-secondary)"
+          className="bg-surface z-50 mr-2 min-w-40 py-2 text-(--text-menu) sm:hidden"
         >
           <DropdownMenuItem asChild>
-            <a href="#about" className="flex items-center gap-2">
-              <UserIcon size={16} />
+            <a
+              href="#about"
+              className="group flex cursor-pointer items-center gap-2 text-xl"
+            >
+              <UserIcon size={20} className="group:hover:text-(--text-menu)" />
               About
             </a>
           </DropdownMenuItem>
 
           <DropdownMenuItem asChild>
-            <a href="#projects" className="flex items-center gap-2">
-              <BriefcaseBusiness size={16} />
+            <a
+              href="#projects"
+              className="group flex cursor-pointer items-center gap-2 text-xl"
+            >
+              <BriefcaseBusiness
+                size={20}
+                className="group:hover:text-(--text-menu)"
+              />
               Projects
             </a>
           </DropdownMenuItem>
 
           <DropdownMenuItem asChild>
-            <a href="#contact" className="flex items-center gap-2">
-              <ContactIcon size={16} />
+            <a
+              href="#contact"
+              className="group flex cursor-pointer items-center gap-2 text-xl"
+            >
+              <ContactIcon
+                size={20}
+                className="group:hover:text-(--text-menu)"
+              />
               Contact
             </a>
           </DropdownMenuItem>

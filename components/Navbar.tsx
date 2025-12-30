@@ -1,4 +1,10 @@
-import Hamburger from "@/components/Hamburger";
+"use client";
+
+import dynamic from "next/dynamic";
+
+const Hamburger = dynamic(() => import("@/components/Hamburger"), {
+  ssr: false,
+});
 
 export default function Navbar() {
   return (
