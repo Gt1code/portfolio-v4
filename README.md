@@ -1,7 +1,5 @@
 🖤 Godstime Sunday Portfolio
 
-<!-- add a screenshot of the site -->
-
 A clean, modern, and responsive personal portfolio built using Next.js, Framer Motion, shadcn/ui, and Lucide React.
 This portfolio showcases my projects, skills, and contact information, adapting automatically to system light/dark mode.
 
@@ -72,6 +70,6 @@ Tailwind CSS Variables: Easy to customize colors, gradients, and shadows.
 
 🔗 Links
 
-Live Portfolio: https://gt-portfolio.vercel.app
+Live Portfolio: https://sgodstime.vercel.app
 
 GitHub Repository: https://github.com/Gt1code/portfolio-v4
