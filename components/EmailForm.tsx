@@ -96,6 +96,7 @@ export default function EmailForm() {
           name="name"
           placeholder="Your name"
           required
+          autoComplete="name"
           className="rounded-2xl border border-(--form-border) p-4"
         />
       </div>
@@ -110,6 +111,7 @@ export default function EmailForm() {
           name="email"
           placeholder="Your email"
           required
+          autoComplete="email"
           className="rounded-2xl border border-(--form-border) p-4"
         />
       </div>
@@ -123,7 +125,6 @@ export default function EmailForm() {
           name="message"
           placeholder="Your message"
           rows={5}
-          // required
           className="rounded-2xl border border-(--form-border) p-4"
         />
       </div>
@@ -138,11 +139,12 @@ export default function EmailForm() {
 
       <ToastContainer
         position="top-center"
-        autoClose={3000}
+        autoClose={2500}
         hideProgressBar
         newestOnTop={false}
         closeOnClick
         pauseOnHover
+        stacked
       />
     </form>
   );

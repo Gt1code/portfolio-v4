@@ -3,12 +3,6 @@
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((mod) => mod.motion.div),
-  { ssr: false },
-);
 
 type ProjectCardProps = {
   imageUrl: string;
@@ -54,15 +48,9 @@ export default function ProjectCard({
   ];
 
   return (
-    <MotionDiv
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="group border-border bg-surface flex min-h-120 max-w-90 min-w-56 flex-col justify-between rounded-2xl border shadow-sm transition hover:shadow-md"
-    >
+    <section className="group border-border bg-surface flex min-h-120 max-w-90 min-w-56 flex-col rounded-2xl border shadow-sm transition hover:shadow-md">
       {/* Image Section  */}
-      <div className="relative h-full w-full flex-[0.6] overflow-hidden rounded-t-2xl">
+      <div className="relative h-62.5 w-full overflow-hidden rounded-t-2xl">
         <Image
           src={imageUrl}
           alt={alt}
@@ -74,7 +62,7 @@ export default function ProjectCard({
       </div>
 
       {/* Content Section  */}
-      <div className="flex flex-[0.4] flex-col justify-between p-4">
+      <div className="flex grow flex-col justify-between p-4">
         <div>
           <h3 className="text-xl font-semibold text-(--text-primary)">
             {title}
@@ -111,6 +99,6 @@ export default function ProjectCard({
           ))}
         </div>
       </div>
-    </MotionDiv>
+    </section>
   );
 }
