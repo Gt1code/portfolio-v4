@@ -5,6 +5,7 @@ const skills = [
   "Tailwind CSS",
   "Framer Motion",
   "Git",
+  "REST API",
 ];
 
 export default function Skills() {

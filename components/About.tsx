@@ -148,7 +148,7 @@ export default function About() {
             <a
               className="btn-primary clip-top-right mt-8 flex w-fit items-center justify-center gap-1 px-4 py-3"
               role="button"
-              href="/Godstime_Sunday_Resume.pdf"
+              href="/gt-RESUME.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
