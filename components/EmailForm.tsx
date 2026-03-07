@@ -9,15 +9,11 @@ export default function EmailForm() {
   const form = useRef<HTMLFormElement | null>(null);
   const [loading, setLoading] = useState(false);
 
-  // Simple sanitization to prevent basic XSS attacks
   const sanitize = (value: string) => value.trim().replace(/[<>]/g, "");
-
-  // Basic email format validation regex
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const warnAndStopLoading = (message: string) => {
     toast.warn(message);
-    // alert(message);
     setLoading(false);
   };
 
@@ -27,12 +23,10 @@ export default function EmailForm() {
 
     setLoading(true);
 
-    // Environment Variables
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-    // Check for missing environment variables
     if (!serviceId || !templateId || !publicKey) {
       console.error("EmailJS environment variables are missing");
       setLoading(false);
@@ -40,19 +34,15 @@ export default function EmailForm() {
     }
 
     const formData = new FormData(form.current);
-
-    // Sanitize inputs
     const name = sanitize(formData.get("name") as string);
     const email = sanitize(formData.get("email") as string);
     const message = sanitize(formData.get("message") as string);
 
-    // Validation
     if (!name || !email || !message) {
       warnAndStopLoading("All fields are required");
       return;
     }
 
-    // Validate email format
     if (!emailRegex.test(email)) {
       warnAndStopLoading("Please enter a valid email address");
       return;
@@ -63,7 +53,7 @@ export default function EmailForm() {
         "Are you sure you want to send this message?",
       );
       if (!confirmSend) {
-        e.preventDefault();
+        setLoading(false);
         return;
       }
 
@@ -73,7 +63,6 @@ export default function EmailForm() {
         { name, email, message },
         publicKey,
       );
-
       toast.success("Message sent successfully!");
       form.current.reset();
     } catch (error) {
@@ -84,9 +73,12 @@ export default function EmailForm() {
     }
   };
 
+  const inputClass =
+    "w-full rounded-lg border border-[var(--border-subtle)] bg-[var(--input-bg)] px-4 py-3 text-sm font-light text-[var(--text-primary)] placeholder:text-[var(--text-muted)] outline-none transition-all duration-200 focus:border-[var(--border-accent)] focus:ring-2 focus:ring-[var(--amber)]/10";
+
   return (
-    <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
-      <div className="flex flex-col">
+    <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-3">
+      <div>
         <label htmlFor="name" className="sr-only">
           Name
         </label>
@@ -97,11 +89,11 @@ export default function EmailForm() {
           placeholder="Your name"
           required
           autoComplete="name"
-          className="rounded-2xl border border-(--form-border) p-4"
+          className={inputClass}
         />
       </div>
 
-      <div className="flex flex-col">
+      <div>
         <label htmlFor="email" className="sr-only">
           Email
         </label>
@@ -112,11 +104,11 @@ export default function EmailForm() {
           placeholder="Your email"
           required
           autoComplete="email"
-          className="rounded-2xl border border-(--form-border) p-4"
+          className={inputClass}
         />
       </div>
 
-      <div className="flex flex-col">
+      <div>
         <label htmlFor="message" className="sr-only">
           Message
         </label>
@@ -125,14 +117,14 @@ export default function EmailForm() {
           name="message"
           placeholder="Your message"
           rows={5}
-          className="rounded-2xl border border-(--form-border) p-4"
+          className={inputClass}
         />
       </div>
 
       <button
         disabled={loading}
         type="submit"
-        className="btn-primary rounded-2xl px-4 py-2 text-xl sm:px-6 sm:py-3"
+        className="from-primary mt-1 w-full rounded-lg bg-linear-to-r to-(--primary-hover) px-6 py-3 text-sm font-medium tracking-wide text-(--bg) transition-all duration-200 hover:-translate-y-0.5 hover:shadow-(--amber-shadow) active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {loading ? "Sending..." : "Send Message"}
       </button>

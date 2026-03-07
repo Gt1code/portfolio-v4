@@ -2,8 +2,7 @@
 
 import dynamic from "next/dynamic";
 import ProjectCard from "../ProjectCard";
-import { motion, Transition } from "framer-motion";
-import { Variants } from "framer-motion";
+import { motion, Transition, Variants } from "framer-motion";
 
 const MotionDiv = dynamic(
   () => import("framer-motion").then((mod) => mod.motion.div),
@@ -40,13 +39,13 @@ const itemVariants: Variants = {
 export default function ProjectCardsMotion() {
   return (
     <MotionDiv
-      className="grid justify-center justify-items-center gap-8 sm:grid-cols-2 lg:grid-cols-3"
+      className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <motion.div variants={itemVariants}>
+      <motion.div variants={itemVariants} className="flex h-full">
         <ProjectCard
           imageUrl="/all-notes.jpeg"
           alt="Note-taking App Screenshot"
@@ -62,28 +61,28 @@ export default function ProjectCardsMotion() {
         />
       </motion.div>
 
-      <MotionDiv variants={itemVariants}>
+      <motion.div variants={itemVariants} className="flex h-full">
         <ProjectCard
           imageUrl="/brand-d-shot.webp"
           alt="landing page screenshot"
           title="Corporate BrandUp Landing Page"
           description="A modern landing page for a corporate branding agency, showcasing their services, and client testimonials."
           tech={["React.js", "TailwindCSS", "framer-motion"]}
-          liveUrl="https://thecorporatebrandupltd.com/"
+          liveUrl="https://www.thecorporatebrandupltd.com"
           githubUrl="https://github.com/Gt1code/brandup"
           labels={[
             "View Live Corporate BrandUp Landing Page",
             "View Code for Corporate BrandUp Landing Page",
           ]}
         />
-      </MotionDiv>
+      </motion.div>
 
-      <MotionDiv variants={itemVariants}>
+      <motion.div variants={itemVariants} className="flex h-full">
         <ProjectCard
           imageUrl="/d-active.jpeg"
           alt="Product cart list"
           title="Dessert Cart Page"
-          description="E-commerce product cart list with order confirmation"
+          description="E-commerce product cart list with order confirmation modal and dynamic quantity controls."
           tech={["React.js", "localStorage"]}
           liveUrl="https://dessertlist.vercel.app/"
           githubUrl="https://github.com/Gt1code/product-cart-list"
@@ -92,7 +91,7 @@ export default function ProjectCardsMotion() {
             "View Code for dessert cart Page",
           ]}
         />
-      </MotionDiv>
+      </motion.div>
     </MotionDiv>
   );
 }

@@ -8,22 +8,36 @@
  */
 
 :root {
-  --menu-text: #000;
-  --bg: #f9fafb;
-  --surface: #ffffff;
-  --text-primary: #111827;
-  --text-secondary: #6b7280;
-  --form-border: #000000;
-  --text-menu: #535862;
-  --border: #f9fafb;
-  --outline-border: #111827;
-  --outline-bg: #c8c8c8;
+  --bg: #f5f0e8;
+  --surface: #fdfaf5;
+  --text-primary: #1a1612;
+  --text-secondary: #6b6358;
+  --text-muted: #a89f94;
+  --border: #e8e0d4;
+  --border-subtle: rgba(0, 0, 0, 0.07);
+  --border-accent: rgba(180, 110, 20, 0.4);
 
-  --primary: oklch(0.205 0 0);
-  --primary-hover: #4338ca;
-  --accent: oklch(0.97 0 0);
+  --amber: #b46e14;
+  --amber-light: #c8861e;
+  --amber-bg: rgba(180, 110, 20, 0.08);
+  --amber-bg-hover: rgba(180, 110, 20, 0.06);
+  --amber-border: rgba(180, 110, 20, 0.2);
+  --amber-shadow: rgba(180, 110, 20, 0.2);
 
-  --success: #10b981;
+  --card-bg: #fdfaf5;
+  --card-hover: #f7f2ea;
+  --input-bg: #f0ebe0;
+
+  --menu-text: #1a1612;
+  --text-menu: #4a4238;
+  --form-border: #c8b89a;
+  --outline-border: rgba(26, 22, 18, 0.3);
+  --outline-bg: #ede8de;
+
+  --primary: #b46e14;
+  --primary-hover: #c8861e;
+  --accent: #b46e14;
+  --success: #2d7a4f;
 
   --radius: 0.625rem;
 
@@ -90,21 +104,35 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --menu-text: #fff;
-    --bg: #0b0f19;
-    --surface: #111827;
-    --text-primary: #f9fafb;
-    --text-secondary: #9ca3af;
-    --form-border: #9ca3af;
+    --bg: #0d1117;
+    --surface: #161b22;
+    --text-primary: #f0ece4;
+    --text-secondary: #8b9ab0;
+    --text-muted: #4a5568;
+    --border: #1f2937;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-accent: rgba(210, 160, 80, 0.4);
+
+    --amber: #d2a050;
+    --amber-light: #e8c07a;
+    --amber-bg: rgba(210, 160, 80, 0.12);
+    --amber-bg-hover: rgba(210, 160, 80, 0.06);
+    --amber-border: rgba(210, 160, 80, 0.2);
+    --amber-shadow: rgba(210, 160, 80, 0.2);
+
+    --card-bg: #161b22;
+    --card-hover: #1c2230;
+    --input-bg: #0d1117;
+
+    --menu-text: #f0ece4;
     --text-menu: #d4d8e0;
-    --border: #1f2933;
-    --outline-border: oklch(70.9% 0.00008 271.152 / 0.921);
-    --outline-bg: rgb(44, 44, 67);
+    --form-border: #8b9ab0;
+    --outline-border: rgba(240, 236, 228, 0.15);
+    --outline-bg: #1c2230;
 
-    --primary: #6366f1;
-    --primary-hover: #818cf8;
-    --accent: #22d3ee;
-
+    --primary: #d2a050;
+    --primary-hover: #e8c07a;
+    --accent: #d2a050;
     --success: #34d399;
   }
 }

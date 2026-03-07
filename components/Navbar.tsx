@@ -8,16 +8,18 @@ const Hamburger = dynamic(() => import("@/components/Hamburger"), {
 
 export default function Navbar() {
   return (
-    <nav className="border-default fixed top-0 z-2 w-full bg-[rgba(204,213,210,0.05)] shadow-white/20 backdrop-blur-[6.4px]">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 sm:py-3 md:py-4">
+    <nav className="fixed top-0 z-200 w-full border-b border-(--border-subtle) bg-(--bg)/80 backdrop-blur-md">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+        {/* Logo */}
         <a href="#">
-          <h1 className="text-lg font-bold text-(--text-primary)">
-            Godstime.dev
+          <h1 className="font-serif text-lg font-light tracking-wide text-(--text-primary)">
+            Godstime<span className="text-(--amber)">.dev</span>
           </h1>
         </a>
 
+        {/* Desktop nav */}
         <nav role="navigation" aria-label="Primary" className="hidden sm:flex">
-          <ul className="flex list-none items-center gap-6">
+          <ul className="flex list-none items-center gap-8">
             {[
               { href: "#about", label: "about", text: "About" },
               { href: "#projects", label: "project", text: "Projects" },
@@ -26,7 +28,7 @@ export default function Navbar() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="relative transition-colors duration-300 ease-in-out after:absolute after:-bottom-1 after:left-0 after:h-[1.5px] after:w-0 after:bg-[#96B7C8] after:transition-all after:duration-300 hover:opacity-90 hover:after:w-full"
+                  className="relative text-sm font-light text-(--text-secondary) transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-(--amber) after:transition-all after:duration-300 hover:text-(--text-primary) hover:after:w-full"
                 >
                   {link.text}
                 </a>

@@ -25,55 +25,46 @@ export default function Hamburger() {
           <button
             aria-label={isOpen ? "Close menu" : "Open menu"}
             onClick={(e) => e.currentTarget.blur()}
-            className="cursor-pointer rounded-md p-2 ring-0 transition outline-none focus:ring-0 focus:outline-none focus-visible:ring-0"
+            className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-(--border-subtle) bg-(--card-bg) text-(--text-secondary) transition-all duration-200 outline-none hover:border-(--border-accent) hover:text-(--amber) focus:outline-none focus-visible:ring-0"
           >
             {isOpen ? (
-              <X className="pointer-events-none" />
+              <X size={16} className="pointer-events-none" />
             ) : (
-              <MenuIcon className="pointer-events-none" />
+              <MenuIcon size={16} className="pointer-events-none" />
             )}
           </button>
         </DropdownMenuTrigger>
 
         <DropdownMenuContent
           align="start"
-          className="bg-surface z-50 mr-2 min-w-40 py-2 text-(--text-menu) sm:hidden"
+          className="z-50 min-w-48 overflow-hidden rounded-xl border border-(--border-subtle) bg-(--card-bg) p-1.5 shadow-xl shadow-black/20 sm:hidden"
         >
-          <DropdownMenuItem asChild>
-            <a
-              href="#about"
-              className="group flex cursor-pointer items-center gap-2 text-xl"
-            >
-              <UserIcon size={20} className="group:hover:text-(--text-menu)" />
-              About
-            </a>
-          </DropdownMenuItem>
+          {/* Top amber hairline */}
+          <div className="mb-1.5 h-px w-full bg-linear-to-r from-transparent via-(--amber) to-transparent opacity-50" />
 
-          <DropdownMenuItem asChild>
-            <a
-              href="#projects"
-              className="group flex cursor-pointer items-center gap-2 text-xl"
-            >
-              <BriefcaseBusiness
-                size={20}
-                className="group:hover:text-(--text-menu)"
-              />
-              Projects
-            </a>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem asChild>
-            <a
-              href="#contact"
-              className="group flex cursor-pointer items-center gap-2 text-xl"
-            >
-              <ContactIcon
-                size={20}
-                className="group:hover:text-(--text-menu)"
-              />
-              Contact
-            </a>
-          </DropdownMenuItem>
+          {[
+            { href: "#about", icon: <UserIcon size={15} />, label: "About" },
+            {
+              href: "#projects",
+              icon: <BriefcaseBusiness size={15} />,
+              label: "Projects",
+            },
+            {
+              href: "#contact",
+              icon: <ContactIcon size={15} />,
+              label: "Contact",
+            },
+          ].map((item) => (
+            <DropdownMenuItem key={item.label} asChild>
+              <a
+                href={item.href}
+                className="flex cursor-pointer items-center gap-3 rounded-lg px-3 py-3 text-sm font-light text-(--text-secondary) transition-all duration-150 outline-none hover:bg-(--amber-bg) hover:text-(--amber) focus:bg-(--amber-bg) focus:text-(--amber)"
+              >
+                <span className="text-(--amber)">{item.icon}</span>
+                {item.label}
+              </a>
+            </DropdownMenuItem>
+          ))}
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

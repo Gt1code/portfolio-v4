@@ -1,75 +1,96 @@
-🖤 Godstime Sunday Portfolio
+# Godstime Sunday — Portfolio
 
-A clean, modern, and responsive personal portfolio built using Next.js, Framer Motion, shadcn/ui, and Lucide React.
-This portfolio showcases my projects, skills, and contact information, adapting automatically to system light/dark mode.
+A clean, modern, and responsive personal portfolio built with **Next.js**, **Framer Motion**, **shadcn/ui**, and **Tailwind CSS v4**.
+Showcases my projects, skills, and contact information — with automatic light/dark mode detection and a refined amber design system.
 
-🚀 Features
+Live site: [sgodstime.vercel.app](https://sgodstime.vercel.app)
 
-Next.js 16 (App Router) – Fast, scalable, and SEO-friendly.
+---
 
-Framer Motion – Smooth animations for page transitions and interactive elements.
+## Screenshots
 
-shadcn/ui – Beautiful, accessible, and customizable UI components.
+<table>
+  <tr>
+    <td width="70%"><img src="./public/desk-portfolio.jpeg" alt="desktop view" width="100%" /></td>
+    <td width="30%"><img src="./public/mobile-portfolio.jpeg" alt="mobile view" width="100%" /></td>
+  </tr>
+</table>
 
-Lucide React – Lightweight and consistent iconography.
+---
 
-Responsive Design – Looks great on desktop, tablet, and mobile.
+## Features
 
-System Theme Detection – Automatically switches between light and dark modes.
+- **Next.js 16 (App Router)** — Fast, scalable, and SEO-friendly
+- **Framer Motion** — Smooth scroll-triggered animations and micro-interactions
+- **shadcn/ui** — Accessible, customizable UI primitives
+- **Lucide React** — Lightweight, consistent iconography
+- **Responsive Design** — Optimised for desktop, tablet, and mobile
+- **System Theme Detection** — Automatically switches between light and dark modes
+- **Amber Design System** — Cohesive CSS variable-driven colour palette across all sections
 
-Professional Sections:
+### Sections
 
-Hero
+`Hero` · `About` · `Projects` · `Contact`
 
-About Me
+---
 
-Skills
+## Tech Stack
 
-Projects
+| Category      | Technology                         |
+| ------------- | ---------------------------------- |
+| Framework     | Next.js 16 (App Router)            |
+| Animations    | Framer Motion                      |
+| UI Components | radix-ui                           |
+| Icons         | Lucide React · React Icons         |
+| Styling       | Tailwind CSS v4 with CSS Variables |
+| Email         | EmailJS                            |
+| Hosting       | Vercel                             |
 
-Contact
+---
 
-Footer
+## Getting Started
 
-💻 Tech Stack
+**Clone the repository:**
 
-Category Technology
-Framework Next.js 16 (App Router)
-Animations Framer Motion
-UI Components shadcn/ui
-Icons Lucide React
-Styling Tailwind CSS v4 with CSS Variables
-Hosting Vercel
-
-🛠 Installation
-
-Clone the repository:
-
+```bash
 git clone https://github.com/Gt1code/portfolio-v4.git
 cd portfolio-v4
+```
 
-Install dependencies:
+**Install dependencies:**
 
+```bash
 npm install
+```
 
-Run the development server:
+**Run the development server:**
 
+```bash
 npm run dev
+```
 
-Open http://localhost:3000 to view the portfolio.
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-🎨 Design & Styling
+---
 
-Light & Dark Mode: Automatically adapts based on system settings.
+## Design System
 
-Gradients: Soft gradient backgrounds for hero and highlights.
+The portfolio uses a CSS variable-driven amber palette that adapts to both light and dark system preferences.
 
-Clean Layout: Simple, professional spacing and typography.
+| Token              | Light Mode | Dark Mode |
+| ------------------ | ---------- | --------- |
+| `--bg`             | `#f5f0e8`  | `#0d1117` |
+| `--card-bg`        | `#fdfaf5`  | `#161b22` |
+| `--amber`          | `#b46e14`  | `#d2a050` |
+| `--amber-light`    | `#c8861e`  | `#e8c07a` |
+| `--text-primary`   | `#1a1612`  | `#f0ece4` |
+| `--text-secondary` | `#6b6358`  | `#8b9ab0` |
 
-Tailwind CSS Variables: Easy to customize colors, gradients, and shadows.
+All components reference these tokens — no hardcoded colours anywhere.
 
-🔗 Links
+---
 
-Live Portfolio: https://sgodstime.vercel.app
+## Links
 
-GitHub Repository: https://github.com/Gt1code/portfolio-v4
+- **Live Portfolio:** [sgodstime.vercel.app](https://sgodstime.vercel.app)
+- **GitHub:** [github.com/Gt1code/portfolio-v4](https://github.com/Gt1code/portfolio-v4)
