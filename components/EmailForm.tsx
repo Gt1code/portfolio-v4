@@ -1,7 +1,5 @@
 "use client";
 import { toast } from "react-toastify";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 
@@ -34,9 +32,9 @@ export default function EmailForm() {
     }
 
     const formData = new FormData(form.current);
-    const name = sanitize(formData.get("name") as string);
-    const email = sanitize(formData.get("email") as string);
-    const message = sanitize(formData.get("message") as string);
+    let name = sanitize(formData.get("name") as string);
+    let email = sanitize(formData.get("email") as string);
+    let message = sanitize(formData.get("message") as string);
 
     if (!name || !email || !message) {
       warnAndStopLoading("All fields are required");
@@ -64,6 +62,9 @@ export default function EmailForm() {
         publicKey,
       );
       toast.success("Message sent successfully!");
+      name = "";
+      email = "";
+      message = "";
       form.current.reset();
     } catch (error) {
       console.error(error);
@@ -124,20 +125,10 @@ export default function EmailForm() {
       <button
         disabled={loading}
         type="submit"
-        className="from-primary mt-1 w-full rounded-lg bg-linear-to-r to-(--primary-hover) px-6 py-3 text-sm font-medium tracking-wide text-(--bg) transition-all duration-200 hover:-translate-y-0.5 hover:shadow-(--amber-shadow) active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50"
+        className="from-primary mt-1 w-full cursor-pointer rounded-lg bg-linear-to-r to-(--primary-hover) px-6 py-3 text-sm font-medium tracking-wide text-(--bg) transition-all duration-200 hover:-translate-y-0.5 hover:shadow-(--amber-shadow) active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {loading ? "Sending..." : "Send Message"}
       </button>
-
-      <ToastContainer
-        position="top-center"
-        autoClose={2500}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        pauseOnHover
-        stacked
-      />
     </form>
   );
 }
