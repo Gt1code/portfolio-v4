@@ -28,7 +28,7 @@ export default function Navbar() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="relative text-sm font-light text-(--text-secondary) transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-(--amber) after:transition-all after:duration-300 hover:text-(--text-primary) hover:after:w-full"
+                  className="relative font-light text-(--text-secondary) transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-(--amber) after:transition-all after:duration-300 hover:text-(--text-primary) hover:after:w-full"
                 >
                   {link.text}
                 </a>

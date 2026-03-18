@@ -1,8 +1,14 @@
 "use client";
 
-import { toast } from "react-toastify";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
+import { toast } from "sonner";
+
+const toastConfig = {
+  position: "top-center",
+  duration: 2000,
+  newestOnTop: true,
+} as const;
 
 export default function EmailForm() {
   const form = useRef<HTMLFormElement | null>(null);
@@ -12,7 +18,7 @@ export default function EmailForm() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const warnAndStopLoading = (message: string) => {
-    toast.warn(message);
+    toast.warning(message, toastConfig);
     setLoading(false);
   };
 
@@ -62,14 +68,14 @@ export default function EmailForm() {
         { name, email, message },
         publicKey,
       );
-      toast.success("Message sent successfully!");
+      toast.success("Message sent successfully!", toastConfig);
       name = "";
       email = "";
       message = "";
       form.current.reset();
     } catch (error) {
       console.error(error);
-      toast.error("Something went wrong 😢");
+      toast.error("Something went wrong 😢", toastConfig);
     } finally {
       setLoading(false);
     }
