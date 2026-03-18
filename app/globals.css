@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -13,7 +14,7 @@
   --text-primary: #1a1612;
   --text-secondary: #6b6358;
   --text-muted: #a89f94;
-  --border: #e8e0d4;
+  --border: oklch(0.922 0 0);
   --border-subtle: rgba(0, 0, 0, 0.07);
   --border-accent: rgba(180, 110, 20, 0.4);
 
@@ -34,16 +35,12 @@
   --outline-border: rgba(26, 22, 18, 0.3);
   --outline-bg: #ede8de;
 
-  --primary: #b46e14;
+  --primary: oklch(0.205 0 0);
   --primary-hover: #c8861e;
-  --accent: #b46e14;
+  --accent: oklch(0.97 0 0);
   --success: #2d7a4f;
 
   --radius: 0.625rem;
-
-  --background: oklch(1 0 0);
-
-  --foreground: oklch(0.145 0 0);
 
   --card: oklch(1 0 0);
 
@@ -71,15 +68,15 @@
 
   --ring: oklch(0.708 0 0);
 
-  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-1: oklch(0.809 0.105 251.813);
 
-  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-2: oklch(0.623 0.214 259.815);
 
-  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-3: oklch(0.546 0.245 262.881);
 
-  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-4: oklch(0.488 0.243 264.376);
 
-  --chart-5: oklch(0.769 0.188 70.08);
+  --chart-5: oklch(0.424 0.199 265.638);
 
   --sidebar: oklch(0.985 0 0);
 
@@ -96,6 +93,10 @@
   --sidebar-border: oklch(0.922 0 0);
 
   --sidebar-ring: oklch(0.708 0 0);
+
+  --background: oklch(1 0 0);
+
+  --foreground: oklch(0.145 0 0);
 }
 
 /* 
@@ -249,6 +250,7 @@ body {
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-sans);
 }
 
 /* 
@@ -274,11 +276,11 @@ body {
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+  --chart-1: oklch(0.809 0.105 251.813);
+  --chart-2: oklch(0.623 0.214 259.815);
+  --chart-3: oklch(0.546 0.245 262.881);
+  --chart-4: oklch(0.488 0.243 264.376);
+  --chart-5: oklch(0.424 0.199 265.638);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -299,5 +301,8 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
   }
 }
