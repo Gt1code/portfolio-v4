@@ -163,7 +163,7 @@ export default function About() {
           <div className="mt-8 flex w-full items-center justify-center md:justify-start">
             <a
               role="button"
-              href="/GODSTIME_SUNDAY-FRONTEND_DEVELOPER.pdf"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-fit items-center gap-2 rounded-lg border border-(--border-subtle) bg-(--card-bg) px-6 py-3 text-sm font-light text-(--text-primary) transition-all duration-200 hover:-translate-y-0.5 hover:border-(--border-accent) hover:shadow-(--amber-shadow) active:translate-y-0"
