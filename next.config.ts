@@ -6,6 +6,23 @@ const isAnalyzerEnabled = process.env.ANALYZE === "true";
 
 const nextConfig: NextConfig = {
   /* your existing config options */
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "frame-ancestors 'self'",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default withBundleAnalyzer({
