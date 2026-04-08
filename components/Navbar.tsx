@@ -8,8 +8,8 @@ const Hamburger = dynamic(() => import("@/components/Hamburger"), {
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 z-100 w-full border-b border-(--border-subtle) bg-(--bg)/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <nav className="fixed top-5 z-100 w-full">
+      <div className="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-(--border-subtle) bg-(--bg)/80 px-6 py-4 backdrop-blur-md">
         {/* Logo */}
         <a href="#">
           <h1 className="font-serif text-lg font-light tracking-wide text-(--text-primary)">
