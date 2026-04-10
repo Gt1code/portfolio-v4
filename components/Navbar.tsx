@@ -9,8 +9,8 @@ import { desktopLinks } from "@/utils/mapElements";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-5 z-100 w-full p-4 sm:p-8">
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between rounded-full border-2 border-(--border-subtle) bg-(--bg)/80 px-6 backdrop-blur-md sm:py-6">
+    <nav className="fixed top-5 z-100 w-full p-4 sm:p-8 md:top-1">
+      <div className="mx-auto flex w-full max-w-5xl items-center justify-between rounded-full border-2 border-(--border-subtle) bg-(--bg)/80 px-6 backdrop-blur-md sm:py-3 md:py-4">
         {/* Logo */}
         <a href="#">
           <h1 className="font-serif text-lg font-light tracking-wide text-(--text-primary)">

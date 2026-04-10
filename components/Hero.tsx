@@ -11,7 +11,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center">
-        <p className="mb-5 font-medium tracking-[0.25em] text-(--amber) uppercase">
+        <p className="mt-7 mb-5 font-medium tracking-[0.25em] text-(--amber) uppercase">
           Frontend Developer
         </p>
 
