@@ -1,40 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { FileTextIcon } from "lucide-react";
+import { IconList } from "@/utils/mapElements";
 
 const MotionDiv = dynamic(
   () => import("framer-motion").then((mod) => mod.motion.div),
   { ssr: false },
 );
-
-type IconListProps = {
-  icons: React.ReactNode;
-  ariaLabel: string;
-  href: string;
-};
-
-const IconList: IconListProps[] = [
-  {
-    icons: <FaLinkedinIn size={18} />,
-    ariaLabel: "Open LinkedIn Profile in new tab",
-    href: "https://www.linkedin.com/in/godstime-sunday/",
-  },
-  {
-    icons: <FaGithub size={18} />,
-    ariaLabel: "Open GitHub in new tab",
-    href: "https://github.com/Gt1code",
-  },
-  {
-    icons: <FaXTwitter size={18} />,
-    ariaLabel: "Open Twitter in new tab",
-    href: "https://x.com/1Gtee",
-  },
-];
 
 export default function About() {
   return (
@@ -148,7 +123,7 @@ export default function About() {
                   visible: { opacity: 1, y: 0 },
                 }}
                 whileHover={{
-                  y: -3,
+                  y: -1,
                   scale: 1.05,
                   transition: { duration: 0.05 },
                 }}
@@ -166,7 +141,7 @@ export default function About() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-fit items-center gap-2 rounded-lg border border-(--border-subtle) bg-(--card-bg) px-6 py-3 text-sm font-light text-(--text-primary) transition-all duration-200 hover:-translate-y-0.5 hover:border-(--border-accent) hover:shadow-(--amber-shadow) active:translate-y-0"
+              className="flex w-fit items-center gap-2 rounded-lg border-2 border-(--border-subtle) bg-(--card-bg) px-6 py-3 text-sm font-light text-(--text-primary) transition-all duration-200 hover:-translate-y-0.5 hover:border-(--border-accent) hover:shadow-(--amber-shadow) active:translate-y-0"
             >
               <FileTextIcon size={16} className="text-(--amber)" />
               Resume

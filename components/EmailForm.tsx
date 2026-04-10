@@ -132,7 +132,7 @@ export default function EmailForm() {
       <button
         disabled={loading}
         type="submit"
-        className="from-primary mt-1 w-full cursor-pointer rounded-lg bg-linear-to-r to-(--primary-hover) px-6 py-3 text-sm font-medium tracking-wide text-(--bg) transition-all duration-200 hover:-translate-y-0.5 hover:shadow-(--amber-shadow) active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50"
+        className="from-primary mt-1 w-full cursor-pointer rounded-lg bg-linear-to-r to-(--primary) px-6 py-3 text-sm font-medium tracking-wide text-(--bg) transition-all duration-200 hover:-translate-y-0.5 hover:shadow-(--amber-shadow) active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {loading ? "Sending..." : "Send Message"}
       </button>

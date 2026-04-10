@@ -11,7 +11,7 @@ export default function Contact() {
       <div className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-(--amber)/5 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-(--amber)/5 blur-3xl" />
 
-      <div className="relative z-10 grid w-full max-w-5xl grid-cols-1 gap-10 md:grid-cols-[1fr_1.4fr] md:items-start md:gap-16">
+      <section className="relative z-10 grid w-full max-w-5xl grid-cols-1 gap-10 md:grid-cols-[1fr_1.4fr] md:items-start md:gap-16">
         {/* LEFT — Info */}
         <div>
           <p className="text-[0.7rem tracking-[0.25em mb-4 font-medium text-(--amber) uppercase">
@@ -23,8 +23,6 @@ export default function Contact() {
             <br />
             something <em className="text-(--amber-light) italic">great</em>
           </h2>
-
-          <div className="mb-8 h-px w-10 bg-linear-to-r from-(--amber) to-transparent" />
 
           <p className="mb-8 max-w-xs text-sm leading-relaxed font-light text-(--text-secondary)">
             Have a project in mind or just want to connect? I&apos;m open to new
@@ -95,7 +93,7 @@ export default function Contact() {
           </a>
         </div>
 
-        {/* RIGHT — Form panel */}
+        {/* RIGHT Form panel */}
         <div className="relative overflow-hidden rounded-2xl border border-(--border-subtle) bg-(--card-bg) p-8 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-linear-to-r before:from-transparent before:via-(--amber) before:to-transparent before:opacity-50">
           <h3 className="mb-1 font-serif text-2xl font-light text-(--text-primary)">
             Send a message
@@ -106,7 +104,7 @@ export default function Contact() {
 
           <EmailForm />
         </div>
-      </div>
+      </section>
     </section>
   );
 }

@@ -3,24 +3,7 @@
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-type ProjectCardProps = {
-  imageUrl: string;
-  alt: string;
-  title: string;
-  description: string;
-  tech: string[];
-  liveUrl: string;
-  githubUrl: string;
-  labels: [string, string];
-};
-
-type LinkType = {
-  href: string;
-  name: string;
-  icon: React.ReactNode;
-  label: string;
-};
+import { type ProjectCardProps, LinkType } from "@/types/allTypes";
 
 export default function ProjectCard({
   imageUrl,
@@ -80,7 +63,7 @@ export default function ProjectCard({
             {tech.map((item) => (
               <span
                 key={item}
-                className="rounded-md border border-(--amber-border) bg-(--amber-bg) px-2 py-0.5 text-[0.65rem] font-medium tracking-wide text-(--amber) uppercase"
+                className="rounded-md border border-(--amber-border) bg-(--amber-bg) px-2 py-0.5 text-[0.65rem] tracking-wide text-(--amber) uppercase"
               >
                 {item}
               </span>
@@ -96,7 +79,7 @@ export default function ProjectCard({
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-(--border-subtle) bg-(--input-bg) px-3 py-1.5 text-xs font-medium text-(--text-secondary) transition-all duration-200 hover:border-(--border-accent) hover:text-(--amber)"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-(--border-subtle) bg-(--input-bg) px-3 py-1.75 text-xs font-medium text-(--text-secondary) transition-all duration-200 hover:border-(--border-accent) hover:text-(--amber)"
             >
               {link.icon}
               {link.name}

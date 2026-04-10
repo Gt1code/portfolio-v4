@@ -11,7 +11,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center">
-        <p className="mb-5 text-[0.7rem] font-medium tracking-[0.25em] text-(--amber) uppercase">
+        <p className="mb-5 font-medium tracking-[0.25em] text-(--amber) uppercase">
           Frontend Developer
         </p>
 
@@ -32,14 +32,14 @@ export default function Hero() {
         <div className="flex items-center gap-4">
           <a
             href="#projects"
-            className="from-primary rounded-lg bg-linear-to-r to-(--primary-hover) px-6 py-3 text-sm font-medium tracking-wide text-(--bg) transition-all duration-200 hover:-translate-y-0.5 hover:shadow-(--amber-shadow) active:translate-y-0"
+            className="from-primary to-primary rounded-lg bg-linear-to-r px-6 py-3 text-sm font-medium tracking-wide text-(--bg) transition-all duration-200 hover:-translate-y-0.5 hover:shadow-(--amber-shadow) active:translate-y-0"
           >
             View Projects
           </a>
 
           <a
             href="#contact"
-            className="rounded-lg border border-(--border-subtle) bg-(--card-bg) px-6 py-3 text-sm font-light text-(--text-primary) transition-all duration-200 hover:-translate-y-0.5 hover:border-(--border-accent) active:translate-y-0"
+            className="rounded-lg border border-(--contact-border) bg-(--card-bg) px-6 py-3 text-sm font-medium text-(--text-primary) transition-all duration-200 hover:-translate-y-0.5 hover:border-2 hover:border-(--border-accent) active:translate-y-0"
           >
             Contact Me
           </a>
