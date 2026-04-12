@@ -47,7 +47,7 @@ export default function ProjectCardsMotion() {
     >
       <motion.div variants={itemVariants} className="flex h-full">
         <ProjectCard
-          imageUrl="/all-notes.jpeg"
+          imageUrl="/projects-thumbnails/all-notes.jpeg"
           alt="Note-taking App Screenshot"
           title="Note-taking App"
           description="A lightweight note-taking application that allows users to create, delete, edit, and organize notes with a clean and intuitive interface."
@@ -63,7 +63,7 @@ export default function ProjectCardsMotion() {
 
       <motion.div variants={itemVariants} className="flex h-full">
         <ProjectCard
-          imageUrl="/brand-d-shot.webp"
+          imageUrl="/projects-thumbnails/brand-d-shot.webp"
           alt="landing page screenshot"
           title="Corporate BrandUp Landing Page"
           description="A modern landing page for a corporate branding agency, showcasing their services, and client testimonials."
@@ -79,7 +79,7 @@ export default function ProjectCardsMotion() {
 
       <motion.div variants={itemVariants} className="flex h-full">
         <ProjectCard
-          imageUrl="/d-active.jpeg"
+          imageUrl="/projects-thumbnails/d-active.jpeg"
           alt="Product cart list"
           title="Dessert Cart Page"
           description="E-commerce product cart list with order confirmation modal and dynamic quantity controls."
