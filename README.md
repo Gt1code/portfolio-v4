@@ -11,8 +11,8 @@ Live site: [sgodstime.vercel.app](https://sgodstime.vercel.app)
 
 <table>
   <tr>
-    <td width="70%"><img src="./public/desk-portfolio.jpeg" alt="desktop view" width="100%" /></td>
-    <td width="30%"><img src="./public/mobile-portfolio.jpeg" alt="mobile view" width="100%" /></td>
+    <td width="70%"><img src="./public/website-screenshots/portfolio-updated.jpeg" alt="desktop view" width="100%" /></td>
+    <td width="30%"><img src="./public/website-screenshots/mobile-updated.jpeg" alt="mobile view" width="100%" /></td>
   </tr>
 </table>
 
@@ -24,7 +24,7 @@ Live site: [sgodstime.vercel.app](https://sgodstime.vercel.app)
 - **Framer Motion** — Smooth scroll-triggered animations and micro-interactions
 - **shadcn/ui** — Accessible, customizable UI primitives
 - **Lucide React** — Lightweight, consistent iconography
-- **Responsive Design** — Optimised for desktop, tablet, and mobile
+- **Responsive Design** — Optimized for desktop, tablet, and mobile
 - **System Theme Detection** — Automatically switches between light and dark modes
 - **Amber Design System** — Cohesive CSS variable-driven colour palette across all sections
 
@@ -40,7 +40,7 @@ Live site: [sgodstime.vercel.app](https://sgodstime.vercel.app)
 | ------------- | ---------------------------------- |
 | Framework     | Next.js 16 (App Router)            |
 | Animations    | Framer Motion                      |
-| UI Components | radix-ui                           |
+| UI Components | shadcn-ui                          |
 | Icons         | Lucide React · React Icons         |
 | Styling       | Tailwind CSS v4 with CSS Variables |
 | Email         | EmailJS                            |

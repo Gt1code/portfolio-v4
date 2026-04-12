@@ -7,7 +7,6 @@ export default function Hero() {
 
       {/* Ambient glows */}
       <div className="pointer-events-none absolute top-1/3 left-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-(--amber)/5 blur-3xl" />
-      <div className="pointer-events-none absolute -right-24 -bottom-24 h-80 w-80 rounded-full bg-(--amber)/5 blur-3xl" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center">
