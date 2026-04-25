@@ -11,8 +11,8 @@ Live site: [sgodstime.vercel.app](https://sgodstime.vercel.app)
 
 <table>
   <tr>
-    <td width="70%"><img src="./public/website-screenshots/portfolio-updated.jpeg" alt="desktop view" width="100%" /></td>
-    <td width="30%"><img src="./public/website-screenshots/mobile-updated.jpeg" alt="mobile view" width="100%" /></td>
+    <td width="70%"><img src="./public/website-screenshots/portfolio-model3.jpeg" alt="desktop view" width="100%" /></td>
+    <td width="30%"><img src="./public/website-screenshots/port-mobile3.jpeg" alt="mobile view" width="100%" /></td>
   </tr>
 </table>
 
@@ -41,7 +41,7 @@ Live site: [sgodstime.vercel.app](https://sgodstime.vercel.app)
 | Framework     | Next.js 16 (App Router)            |
 | Animations    | Framer Motion                      |
 | UI Components | shadcn-ui                          |
-| Icons         | Lucide React · React Icons         |
+| Icons         | Lucide React, Simple icons         |
 | Styling       | Tailwind CSS v4 with CSS Variables |
 | Email         | EmailJS                            |
 | Hosting       | Vercel                             |
