@@ -7,8 +7,24 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { MenuIcon, X } from "lucide-react";
+import { BriefcaseBusiness, ContactIcon, UserIcon } from "lucide-react";
 import { useState } from "react";
-import { mobileLinks } from "@/utils/mapElements";
+import { type MobileLinkProps } from "@/types/allTypes";
+// import { mobileLinks } from "@/utils/mapElements";
+
+export const mobileLinks: MobileLinkProps[] = [
+  { href: "#about", icon: <UserIcon size={15} />, label: "About" },
+  {
+    href: "#projects",
+    icon: <BriefcaseBusiness size={15} />,
+    label: "Projects",
+  },
+  {
+    href: "#contact",
+    icon: <ContactIcon size={15} />,
+    label: "Contact",
+  },
+];
 
 export default function Hamburger() {
   const [isOpen, setIsOpen] = useState(false);

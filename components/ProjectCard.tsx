@@ -31,7 +31,7 @@ export default function ProjectCard({
   ];
 
   return (
-    <section className="group relative flex h-full w-full flex-col overflow-hidden rounded-2xl border border-(--border-subtle) bg-(--card-bg) shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-(--border-accent) hover:shadow-(--amber-shadow)">
+    <section className="group relative flex h-full w-full flex-col overflow-hidden rounded-2xl border border-(--border-subtle) bg-(--card-bg) shadow-sm transition-all duration-300 hover:border-(--border-accent) hover:shadow-(--amber-shadow)">
       {/* Top amber hairline on hover */}
       <div className="absolute inset-x-0 top-0 z-10 h-px bg-linear-to-r from-transparent via-(--amber) to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-50" />
 

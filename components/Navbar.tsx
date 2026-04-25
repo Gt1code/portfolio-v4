@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const Hamburger = dynamic(() => import("@/components/Hamburger"), {
+const Hamburger = dynamic(() => import("@/components/hamburger/index"), {
   ssr: false,
 });
 import { desktopLinks } from "@/utils/mapElements";

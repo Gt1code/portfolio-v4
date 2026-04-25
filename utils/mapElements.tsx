@@ -2,9 +2,15 @@ import { type IconListProps, MobileLinkProps } from "@/types/allTypes";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { BriefcaseBusiness, ContactIcon, UserIcon } from "lucide-react";
+import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 
 // About... Icons
 export const IconList: IconListProps[] = [
+  {
+    icons: <SiWhatsapp size={18} />,
+    ariaLabel: "Open WhatsApp in new tab",
+    href: "https://wa.link/4lgrco",
+  },
   {
     icons: <FaLinkedinIn size={18} />,
     ariaLabel: "Open LinkedIn Profile in new tab",
@@ -24,16 +30,16 @@ export const IconList: IconListProps[] = [
 
 // Skills...
 export const skills: Array<string> = [
+  "Typescript",
   "React",
   "Next.js",
-  "Typescript",
   "Tailwind CSS",
   "Framer Motion",
   "Git",
   "REST API",
-  "prisma orm",
-  "neon db",
-  "supabase",
+  "Prisma",
+  "Clerk Auth",
+  "Supabase",
 ];
 
 // mobile menu
