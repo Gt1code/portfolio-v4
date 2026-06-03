@@ -34,7 +34,7 @@ export default function About() {
           className="flex flex-col items-center gap-8 md:flex-3"
         >
           {/* Profile image */}
-          <div className="relative">
+          {/* <div className="relative">
             <div className="absolute -inset-1 rounded-3xl bg-linear-to-br from-(--amber)/30 to-transparent blur-sm" />
             <Image
               loading="eager"
@@ -44,7 +44,7 @@ export default function About() {
               height={250}
               className="relative mx-auto w-[15em] rounded-3xl sm:w-[18em]"
             />
-          </div>
+          </div> */}
 
           {/* Desktop social icons — horizontal below image */}
           <MotionDiv

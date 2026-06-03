@@ -1,40 +1,48 @@
 "use client";
 
+import "@/app/globals.css";
 import dynamic from "next/dynamic";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Hamburger = dynamic(() => import("@/components/hamburger/index"), {
   ssr: false,
 });
+
 import { desktopLinks } from "@/utils/mapElements";
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-5 z-100 w-full p-4 sm:p-8 md:top-1">
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between rounded-full border-2 border-(--border-subtle) bg-(--bg)/80 px-6 backdrop-blur-md sm:py-3 md:py-4">
+    <nav className="nav-root" aria-label="Site navigation">
+      <div className={`nav-inner ${scrolled ? "nav-scrolled" : ""} `}>
         {/* Logo */}
-        <a href="#">
-          <h1 className="font-serif text-lg font-light tracking-wide text-(--text-primary)">
-            Godstime<span className="text-(--amber)">.dev</span>
-          </h1>
-        </a>
+        <Link href="/" className="nav-logo" aria-label="Home">
+          <span className="nav-logo-accent">G</span>T
+        </Link>
 
-        {/* Desktop nav */}
-        <nav role="navigation" aria-label="Primary" className="hidden sm:flex">
-          <ul className="flex list-none items-center gap-8">
-            {desktopLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="relative font-normal text-(--text-secondary) transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-(--amber) after:transition-all after:duration-300 hover:text-(--text-primary) hover:after:w-full"
-                >
-                  {link.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {/* Desktop links */}
+        <ul className="nav-links" role="list">
+          {desktopLinks.map((link) => (
+            <li key={link.label}>
+              <a href={link.href} className="nav-link">
+                {link.text}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-        <Hamburger />
+        {/* Mobile hamburger */}
+        <div className="sm:hidden">
+          <Hamburger />
+        </div>
       </div>
     </nav>
   );

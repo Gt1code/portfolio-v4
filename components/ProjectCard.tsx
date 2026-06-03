@@ -3,7 +3,7 @@
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { type ProjectCardProps, LinkType } from "@/types/allTypes";
+import { type ProjectCardProps } from "@/types/allTypes";
 
 export default function ProjectCard({
   imageUrl,
@@ -13,23 +13,7 @@ export default function ProjectCard({
   tech,
   liveUrl,
   githubUrl,
-  labels,
 }: ProjectCardProps) {
-  const links: Array<LinkType> = [
-    {
-      href: liveUrl,
-      name: "Live",
-      icon: <ExternalLink size={14} />,
-      label: labels[0],
-    },
-    {
-      href: githubUrl,
-      name: "Code",
-      icon: <Github size={14} />,
-      label: labels[1],
-    },
-  ];
-
   return (
     <section className="group relative flex h-full w-full flex-col overflow-hidden rounded-2xl border border-(--border-subtle) bg-(--card-bg) shadow-sm transition-all duration-300 hover:border-(--border-accent) hover:shadow-(--amber-shadow)">
       {/* Top amber hairline on hover */}
@@ -60,10 +44,11 @@ export default function ProjectCard({
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">
+            {/* bg-(--amber-bg) */}
             {tech.map((item) => (
               <span
                 key={item}
-                className="rounded-md border border-(--amber-border) bg-(--amber-bg) px-2 py-0.5 text-[0.65rem] tracking-wide text-(--amber) uppercase"
+                className="rounded-md border border-(--tech-border) bg-gray-200/10 px-2 py-0.5 text-[0.65rem] tracking-wide text-(--amber) uppercase"
               >
                 {item}
               </span>
@@ -71,20 +56,26 @@ export default function ProjectCard({
           </div>
         </div>
 
-        <div className="mt-5 flex items-center gap-2 border-t border-(--border-subtle) pt-4">
-          {links.map((link) => (
-            <Link
-              key={link.name}
-              aria-label={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-(--border-subtle) bg-(--input-bg) px-3 py-1.75 text-xs font-medium text-(--text-secondary) transition-all duration-200 hover:border-(--border-accent) hover:text-(--amber)"
-            >
-              {link.icon}
-              {link.name}
-            </Link>
-          ))}
+        <div className="mt-5 flex items-center justify-between gap-2 pt-2">
+          <Link
+            aria-label="View live project"
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-(--border-subtle) px-3 py-1.75 text-xs font-medium text-(--accent-color) transition-all duration-200 hover:border-(--border-accent) hover:text-(--amber)"
+          >
+            Live Demo <ExternalLink size={14} strokeWidth={2} />
+          </Link>
+
+          <Link
+            aria-label="View source code"
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.75 text-xs font-medium text-(--text-secondary) transition-all duration-200 hover:border-(--border-accent) hover:text-(--amber)"
+          >
+            <Github size={18} strokeWidth={2} />
+          </Link>
         </div>
       </div>
     </section>

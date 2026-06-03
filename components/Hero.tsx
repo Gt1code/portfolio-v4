@@ -1,47 +1,93 @@
+import Image from "next/image";
+import {
+  ArrowRight,
+  Download,
+  Github,
+  Linkedin,
+  Mail,
+  Twitter,
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
+
+const socials = [
+  { icon: Github, href: "https://github.com/godstime-sunday", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://linkedin.com/in/godstime-sunday",
+    label: "LinkedIn",
+  },
+  {
+    icon: Twitter,
+    href: "https://x.com/godstime_sunday",
+    label: "X / Twitter",
+  },
+  { icon: Mail, href: "mailto:sundaygodstimegt1@gmail.com", label: "Email" },
+];
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-(--bg) px-6 text-center">
+    <section className="hero-root">
       <Navbar />
 
-      {/* Ambient glows */}
-      <div className="pointer-events-none absolute top-1/3 left-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-(--amber)/5 blur-3xl" />
+      {/* Ambient glow — blue tint on light, amber on dark */}
+      <span className="hero-glow" aria-hidden="true" />
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center">
-        <p className="mt-7 mb-5 font-medium tracking-[0.25em] text-(--amber) uppercase">
-          Frontend Developer
-        </p>
+      <div className="hero-grid">
+        {/* Left: copy */}
+        <div className="hero-copy">
+          <p className="hero-eyebrow">Frontend Developer</p>
 
-        <h1 className="mb-6 font-serif text-5xl leading-tight font-light tracking-tight text-(--text-primary) md:text-7xl">
-          Hi, I&apos;m{" "}
-          <em className="text-(--amber-light)] italic">Godstime</em>
-          <br />
-          Sunday
-        </h1>
+          <h1 className="hero-heading">
+            Hi, I&apos;m <em className="hero-heading-em">Godstime</em>
+            <br />
+            Sunday
+          </h1>
 
-        <div className="from-(--amber)] mb-8 h-px w-10 bg-linear-to-r to-transparent" />
+          <p className="hero-sub">
+            Building clean, modern, and scalable web applications with a focus
+            on performance and great user experience.
+          </p>
 
-        <p className="mb-10 max-w-md text-sm leading-relaxed font-light text-(--text-secondary)">
-          Building clean, modern, and scalable web applications with a focus on
-          performance and great user experience.
-        </p>
+          <div className="hero-cta-row">
+            <a href="#projects" className="btn-primary">
+              View Projects <ArrowRight size={15} strokeWidth={2.2} />
+            </a>
+            <a href="/resume.pdf" download className="btn-secondary">
+              Download CV <Download size={15} strokeWidth={2.2} />
+            </a>
+          </div>
 
-        <div className="flex items-center gap-4">
-          <a
-            href="#projects"
-            className="from-primary to-primary rounded-lg bg-linear-to-r px-6 py-3 text-sm font-medium tracking-wide text-(--bg) transition-all duration-200 hover:-translate-y-0.5 hover:shadow-(--amber-shadow) active:translate-y-0"
-          >
-            View Projects
-          </a>
+          <ul className="hero-socials" role="list">
+            {socials.map(({ icon: Icon, href, label }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="hero-social-icon"
+                >
+                  <Icon size={20} strokeWidth={1.8} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          <a
-            href="#contact"
-            className="rounded-lg border border-(--contact-border) bg-(--card-bg) px-6 py-3 text-sm font-medium text-(--text-primary) transition-all duration-200 hover:-translate-y-0.5 hover:border-2 hover:border-(--border-accent) active:translate-y-0"
-          >
-            Contact Me
-          </a>
+        {/* Right: photo */}
+        <div className="hero-photo-wrapper">
+          <div className="hero-photo-frame">
+            <Image
+              src="/profile-pic.webp"
+              alt="Godstime Sunday — Frontend Developer"
+              fill
+              priority
+              className="hero-photo-img"
+              sizes="(max-width: 768px) 260px, 340px"
+            />
+          </div>
+          <span className="hero-corner hero-corner-tl" aria-hidden="true" />
+          <span className="hero-corner hero-corner-br" aria-hidden="true" />
         </div>
       </div>
     </section>

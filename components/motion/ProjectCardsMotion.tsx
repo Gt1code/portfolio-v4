@@ -54,10 +54,6 @@ export default function ProjectCardsMotion() {
           tech={["React.js", "Context API", "React-router", "localStorage"]}
           liveUrl="https://notepad-v1.vercel.app/"
           githubUrl="https://github.com/Gt1code/notepad"
-          labels={[
-            "View Live Note-taking App",
-            "View Code for Note-taking App",
-          ]}
         />
       </motion.div>
 
@@ -70,10 +66,6 @@ export default function ProjectCardsMotion() {
           tech={["React.js", "TailwindCSS", "framer-motion"]}
           liveUrl="https://www.thecorporatebrandupltd.com"
           githubUrl="https://github.com/Gt1code/brandup"
-          labels={[
-            "View Live Corporate BrandUp Landing Page",
-            "View Code for Corporate BrandUp Landing Page",
-          ]}
         />
       </motion.div>
 
@@ -86,10 +78,6 @@ export default function ProjectCardsMotion() {
           tech={["React.js", "localStorage"]}
           liveUrl="https://dessertlist.vercel.app/"
           githubUrl="https://github.com/Gt1code/product-cart-list"
-          labels={[
-            "View Live dessert cart page",
-            "View Code for dessert cart Page",
-          ]}
         />
       </motion.div>
     </MotionDiv>

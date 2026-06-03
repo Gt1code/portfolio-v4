@@ -31,7 +31,6 @@ export type ProjectCardProps = {
   tech: string[];
   liveUrl: string;
   githubUrl: string;
-  labels: [string, string];
 };
 
 export type LinkType = {
