@@ -1,96 +1,72 @@
-# Godstime Sunday — Portfolio
+# Godstime Sunday — Developer Portfolio
 
-A clean, modern, and responsive personal portfolio built with **Next.js**, **Framer Motion**, **shadcn/ui**, and **Tailwind CSS v4**.
-Showcases my projects, skills, and contact information — with automatic light/dark mode detection and a refined amber design system.
+Personal portfolio website built with Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Lucide React, and React Icons.
 
 Live site: [sgodstime.vercel.app](https://sgodstime.vercel.app)
 
----
+## Screenshot
 
-## Screenshots
-
-<table>
-  <tr>
-    <td width="70%"><img src="./public/website-screenshots/portfolio-model3.jpeg" alt="desktop view" width="100%" /></td>
-    <td width="30%"><img src="./public/website-screenshots/port-mobile3.jpeg" alt="mobile view" width="100%" /></td>
-  </tr>
-</table>
-
----
-
-## Features
-
-- **Next.js 16 (App Router)** — Fast, scalable, and SEO-friendly
-- **Framer Motion** — Smooth scroll-triggered animations and micro-interactions
-- **shadcn/ui** — Accessible, customizable UI primitives
-- **Lucide React** — Lightweight, consistent iconography
-- **Responsive Design** — Optimized for desktop, tablet, and mobile
-- **System Theme Detection** — Automatically switches between light and dark modes
-- **Amber Design System** — Cohesive CSS variable-driven colour palette across all sections
-
-### Sections
-
-`Hero` · `About` · `Projects` · `Contact`
-
----
+![Site Preview](./public/website-screenshots/light-port.jpeg)
 
 ## Tech Stack
 
-| Category      | Technology                         |
-| ------------- | ---------------------------------- |
-| Framework     | Next.js 16 (App Router)            |
-| Animations    | Framer Motion                      |
-| UI Components | shadcn-ui                          |
-| Icons         | Lucide React, Simple icons         |
-| Styling       | Tailwind CSS v4 with CSS Variables |
-| Email         | EmailJS                            |
-| Hosting       | Vercel                             |
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React · React Icons (FA)
+- **Theme**: `next-themes` (system-aware dark/light mode)
+- **Deployment**: Vercel
 
----
+## Project Structure
+
+```
+portfolio/
+├── app/
+│   ├── layout.tsx          # Root layout — fonts, ThemeProvider, metadata
+│   ├── page.tsx            # Home page — assembles all sections
+│   └── globals.css         # CSS custom properties (palette + sizing)
+├── components/
+│   ├── layout/
+│   │   ├── Navbar.tsx      # Sticky nav with theme toggle
+│   │   └── Footer.tsx      # Copyright + policy links
+│   ├── home/
+│   │   └── Hero.tsx        # Headline, CTA buttons, social links, photo
+│   ├── about/
+│   │   └── AboutCard.tsx   # About me snippet with link
+│   ├── skills/
+│   │   └── SkillsCard.tsx  # Skill badge grid
+│   ├── projects/
+│   │   ├── ProjectsSection.tsx   # Section wrapper + grid
+│   │   └── ProjectCard.tsx       # Individual project card
+│   ├── contact/
+│   │   └── ContactBanner.tsx     # "Let's work together" CTA
+│   └── ui/
+│       ├── Badge.tsx             # Reusable skill/tag badge
+│       ├── Button.tsx            # Primary + outline button variants
+│       └── SectionHeading.tsx    # Icon + label section heading
+├── lib/
+│   ├── projects.ts         # Project data
+│   └── skills.ts           # Skills data
+└── types/
+    └── index.ts            # Shared TypeScript interfaces
+```
 
 ## Getting Started
 
-**Clone the repository:**
-
-```bash
-git clone https://github.com/Gt1code/portfolio-v4.git
-cd portfolio-v4
-```
-
-**Install dependencies:**
-
 ```bash
 npm install
-```
-
-**Run the development server:**
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
+Open [http://localhost:3000](http://localhost:3000)
 
----
+## Customization
 
-## Design System
-
-The portfolio uses a CSS variable-driven amber palette that adapts to both light and dark system preferences.
-
-| Token              | Light Mode | Dark Mode |
-| ------------------ | ---------- | --------- |
-| `--bg`             | `#f5f0e8`  | `#0d1117` |
-| `--card-bg`        | `#fdfaf5`  | `#161b22` |
-| `--amber`          | `#b46e14`  | `#d2a050` |
-| `--amber-light`    | `#c8861e`  | `#e8c07a` |
-| `--text-primary`   | `#1a1612`  | `#f0ece4` |
-| `--text-secondary` | `#6b6358`  | `#8b9ab0` |
-
-All components reference these tokens — no hardcoded colours anywhere.
-
----
+- **Content**: Edit data files in `lib/` — no component changes needed for copy/project updates.
+- **Colors**: All brand tokens live in `app/globals.css` under `:root` and `.dark`.
+- **Theme toggle**: Handled by `next-themes` — respects system preference on first load.
 
 ## Links
 
 - **Live Portfolio:** [sgodstime.vercel.app](https://sgodstime.vercel.app)
-- **GitHub:** [github.com/Gt1code/portfolio-v4](https://github.com/Gt1code/portfolio-v4)
+- **Github:** [github.com/Gt1code/portfolio-v4](https://github.com/Gt1code/portfolio-v4)

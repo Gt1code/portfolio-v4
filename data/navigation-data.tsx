@@ -1,9 +1,8 @@
 import { BriefcaseBusiness, ContactIcon, UserIcon } from "lucide-react";
 import { SiWhatsapp, SiX, SiGithub } from "@icons-pack/react-simple-icons";
-import type { MobileLinkProps, SocialLinkProps } from "@/types/allTypes";
 import { FaLinkedinIn } from "react-icons/fa";
 
-export const mobileLinks: MobileLinkProps[] = [
+export const mobileLinks = [
   { href: "#about", icon: <UserIcon size={15} />, label: "About" },
   {
     href: "#projects",
@@ -13,7 +12,7 @@ export const mobileLinks: MobileLinkProps[] = [
   { href: "#contact", icon: <ContactIcon size={15} />, label: "Contact" },
 ];
 
-export const socialLinks: SocialLinkProps[] = [
+export const socialLinks = [
   {
     href: "https://wa.link/4lgrco",
     icon: <SiWhatsapp size={15} />,

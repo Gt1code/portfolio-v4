@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import "@/app/globals.css";
-import Footer from "@/components/Footer";
-import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +19,15 @@ export const metadata: Metadata = {
   title: "Godstime Sunday | Frontend Developer",
   description:
     "Frontend developer building modern, fast, and accessible web experiences with React, Next.js, and Tailwind CSS.",
+  keywords: [
+    "frontend developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Nigeria",
+    "web developer",
+  ],
+  authors: [{ name: "Godstime Sunday", url: "https://sgodstime.vercel.app" }],
 
   openGraph: {
     title: "Godstime Sunday | Frontend Developer",
@@ -54,15 +64,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main>
-          {children}
-          <Footer />
-        </main>
-        <Toaster />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

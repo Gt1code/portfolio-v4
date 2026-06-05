@@ -1,4 +1,4 @@
-import type { Variants, Transition } from "framer-motion";
+/* import type { Variants, Transition } from "framer-motion";
 
 const easeOut: Transition = { duration: 0.4, ease: "easeOut" };
 
@@ -18,3 +18,4 @@ export const pillVariants: Variants = {
   hidden: { opacity: 0, y: 12 },
   visible: { opacity: 1, y: 0, transition: easeOut },
 };
+ */

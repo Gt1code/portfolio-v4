@@ -1,30 +1,20 @@
-import { type IconListProps, MobileLinkProps } from "@/types/allTypes";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { BriefcaseBusiness, ContactIcon, UserIcon } from "lucide-react";
-import { SiWhatsapp } from "@icons-pack/react-simple-icons";
+import { FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { MdOutlineEmail } from "react-icons/md";
 
-// About... Icons
-export const IconList: IconListProps[] = [
+export const socialLinks = [
+  { label: "GitHub", href: "https://github.com/Gt1code", icon: FaGithub },
+  { label: "WhatsApp", href: "https://wa.link/4lgrco", icon: FaWhatsapp },
   {
-    icons: <SiWhatsapp size={18} />,
-    ariaLabel: "Open WhatsApp in new tab",
-    href: "https://wa.link/4lgrco",
-  },
-  {
-    icons: <FaLinkedinIn size={18} />,
-    ariaLabel: "Open LinkedIn Profile in new tab",
+    label: "LinkedIn",
     href: "https://www.linkedin.com/in/godstime-sunday/",
+    icon: FaLinkedinIn,
   },
+  { label: "X", href: "https://x.com/1Gtee", icon: FaXTwitter },
   {
-    icons: <FaGithub size={18} />,
-    ariaLabel: "Open GitHub in new tab",
-    href: "https://github.com/Gt1code",
-  },
-  {
-    icons: <FaXTwitter size={18} />,
-    ariaLabel: "Open Twitter in new tab",
-    href: "https://x.com/1Gtee",
+    label: "Email",
+    href: "mailto:sundaygodstimegt1@gmail.com",
+    icon: MdOutlineEmail,
   },
 ];
 
@@ -40,26 +30,4 @@ export const skills: Array<string> = [
   "Prisma",
   "Clerk Auth",
   "Supabase",
-];
-
-// mobile menu
-export const mobileLinks: MobileLinkProps[] = [
-  { href: "#about", icon: <UserIcon size={15} />, label: "About" },
-  {
-    href: "#projects",
-    icon: <BriefcaseBusiness size={15} />,
-    label: "Projects",
-  },
-  {
-    href: "#contact",
-    icon: <ContactIcon size={15} />,
-    label: "Contact",
-  },
-];
-
-// desktop menu
-export const desktopLinks = [
-  { href: "#about", label: "about", text: "About" },
-  { href: "#projects", label: "project", text: "Projects" },
-  { href: "#contact", label: "contact", text: "Contact" },
 ];

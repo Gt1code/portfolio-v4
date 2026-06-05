@@ -1,5 +1,3 @@
-import type { SkillGroup } from "@/types/allTypes";
-
 const TypeScriptIcon = () => (
   <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
     <rect x="2" y="2" width="20" height="20" rx="2" />
@@ -112,6 +110,17 @@ const GitIcon = () => (
     <path d="M22.2 11.2l-9.4-9.4a1.1 1.1 0 00-1.6 0L9.3 3.7l2 2a1.3 1.3 0 011.6 1.6l1.9 1.9a1.3 1.3 0 011.1 2.2 1.3 1.3 0 01-1.3.3l-1.8-1.8v4.7a1.3 1.3 0 01.3 2.4 1.3 1.3 0 01-1.6-1.6V8.8a1.3 1.3 0 01-.7-2.1L8.9 4.8 1.8 11.9a1.1 1.1 0 000 1.6l9.4 9.4a1.1 1.1 0 001.6 0l9.4-9.4a1.1 1.1 0 000-1.3z" />
   </svg>
 );
+
+export type Skill = {
+  name: string;
+  cls: string;
+  icon: React.ReactNode;
+};
+
+export type SkillGroup = {
+  label: string;
+  skills: Skill[];
+};
 
 export const skillGroups: SkillGroup[] = [
   {

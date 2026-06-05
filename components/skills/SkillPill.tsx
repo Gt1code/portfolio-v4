@@ -1,14 +1,10 @@
-import { motion } from "framer-motion";
-import { pillVariants } from "./SkillVariants";
-import type { Skill } from "@/types/allTypes";
+import type { Skill } from "@/data/skills-data";
 
-type Props = { skill: Skill };
-
-export default function SkillPill({ skill }: Props) {
+export default function SkillPill({ skill }: { skill: Skill }) {
   return (
-    <motion.span variants={pillVariants} className={`skill-pill ${skill.cls}`}>
+    <span className={`skill-pill ${skill.cls}`}>
       {skill.icon}
       {skill.name}
-    </motion.span>
+    </span>
   );
 }

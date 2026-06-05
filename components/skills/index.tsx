@@ -1,8 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { skillGroups } from "@/data/skills-data";
-import { headingVariants } from "./SkillVariants";
 import SkillGroup from "./SkillGroup";
 
 export default function Skills() {
@@ -60,28 +58,18 @@ export default function Skills() {
         }
       `}</style>
 
-      <section className="bg-[url('/bg-header-desktop.webp')] bg-cover bg-no-repeat px-4 py-20">
+      <section
+        className="scroll-mt-10 bg-[url('/bg-header-desktop.webp')] bg-cover bg-no-repeat px-4 py-20"
+        id="skills"
+      >
         <div className="mx-auto max-w-5xl px-4">
-          <motion.p
-            className="mb-1 font-mono text-[11px] tracking-[0.18em] text-(--text-secondary) uppercase"
-            variants={headingVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-          >
+          <p className="mb-1 font-mono text-[11px] tracking-[0.18em] text-(--text-secondary) uppercase">
             What I work with
-          </motion.p>
+          </p>
 
-          <motion.h2
-            className="mb-10 text-3xl font-semibold text-(--text-primary)"
-            variants={headingVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.08 }}
-          >
+          <h2 className="mb-10 text-3xl font-semibold text-(--text-primary)">
             Skills & Technologies
-          </motion.h2>
+          </h2>
 
           <div className="flex flex-col gap-8">
             {skillGroups.map((group) => (
