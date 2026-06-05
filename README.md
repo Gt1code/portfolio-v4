@@ -33,8 +33,13 @@ portfolio/
 │   │   └── Hero.tsx        # Headline, CTA buttons, social links, photo
 │   ├── about/
 │   │   └── AboutCard.tsx   # About me snippet with link
-│   ├── skills/
+│   ├── skill/
 │   │   └── SkillsCard.tsx  # Skill badge grid
+│   ├── skills/
+│   │   ├── index.tsx
+│   │   ├── SkillGroup.tsx
+│   │   ├── SkillPill.tsx
+|   |   ├── SkillVariants.tsx
 │   ├── projects/
 │   │   ├── ProjectsSection.tsx   # Section wrapper + grid
 │   │   └── ProjectCard.tsx       # Individual project card

@@ -20,9 +20,7 @@ export default function Skills() {
           transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
         }
         .skill-pill:hover {
-          transform: translateY(-2px);
           filter: brightness(1.08);
-          box-shadow: 0 6px 20px -4px rgba(0,0,0,0.25);
         }
         .skill--ts       { background: #1a1a2e; color: #3b82f6; border-color: #2d4a7a; }
         .skill--react    { background: #0d1f2d; color: #61dafb; border-color: #1a4a5c; }

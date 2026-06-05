@@ -99,7 +99,7 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
-            className="text-text-primary flex h-9 w-9 items-center justify-center"
+            className="text-text-primary flex h-9 w-9 cursor-pointer items-center justify-center"
           >
             <Menu size={22} />
           </button>
@@ -138,7 +138,7 @@ export default function Navbar() {
               <button
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close menu"
-                className="text-text-secondary hover:text-text-primary mt-0.5 transition-colors"
+                className="text-text-secondary hover:text-text-primary mt-0.5 cursor-pointer transition-colors"
               >
                 <X size={20} />
               </button>
