@@ -1,26 +1,16 @@
 import { Project } from "@/types";
 
 export const projects: Project[] = [
-  /*   {
-    id: "rozyplace",
-    title: "RozyPlace",
+  {
+    id: "scheduled-message",
+    title: "Scheduled Message App",
     description:
-      "A full-featured e-commerce storefront for a hair and beauty products brand, with product listings, categories, and WhatsApp ordering.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://rozyplace.vercel.app",
-    repoUrl: "https://github.com/Gt1code/rozyplace",
-    imageUrl: "/projects/rozyplace.png",
-  }, */
-  /*   {
-    id: "credaxis",
-    title: "CredAxis",
-    description:
-      "An alternative credit engine platform with multi-step signup, OTP verification, and data visualization dashboards.",
-    tags: ["React", "Vite", "shadcn/ui", "Recharts"],
-    liveUrl: "https://credaxis.vercel.app",
-    repoUrl: "https://github.com/Gt1code/credaxis",
-    imageUrl: "/projects/credaxis.png",
-  }, */
+      "A simple app for scheduling and sending messages at a later time.",
+    tags: ["Next.js", "Resend", "Supabase", "Tailwind CSS"],
+    liveUrl: "https://scheduledmessage.vercel.app/",
+    repoUrl: "https://github.com/Gt1code/scheduledmessage",
+    imageUrl: "/projects-thumbnails/capsule-thumbnail.png",
+  },
   {
     id: "corporate-brandup",
     title: "The Corporate BrandUp",
